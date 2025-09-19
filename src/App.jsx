@@ -9,6 +9,7 @@ import Service from './Components/Service'
 import Products from './Components/Products'
 import Clients from './Components/Clients'
 import Contact from './Components/Contact'
+import WhyChooseUs from './Components/WhyChooseUse'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
       <Service/>
       <Products/>
       <Clients/>
+      <WhyChooseUs/>
       <Contact/>
     </>
   )
