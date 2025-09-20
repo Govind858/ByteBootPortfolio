@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 
 const Services = () => {
   const services = [
@@ -80,23 +79,55 @@ const Services = () => {
             ))}
           </div>
 
-          {/* Additional CTA section */}
-          <div className="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-purple-500/20 animate-fade-in opacity-0"
+          {/* Creative Process Visualization */}
+          <div className="bg-gradient-to-r from-cyan-400/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-cyan-400/20 animate-fade-in opacity-0"
                style={{animationDelay: '1.0s', animationFillMode: 'forwards'}}>
-            <div className="text-center max-w-3xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                Ready to Transform Your Business?
+            <div className="text-center max-w-4xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
+                Our Creative Process
               </h3>
-              <p className="text-gray-300 text-lg mb-8">
-                Let's discuss how our services can help you achieve your goals and drive innovation in your industry.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full font-medium shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:scale-105">
-                  Start a Project
-                </button>
-                <button className="px-8 py-3 border border-cyan-400/30 text-cyan-400 rounded-full font-medium hover:bg-cyan-400/10 transition-colors duration-300 transform hover:scale-105">
-                  Schedule a Call
-                </button>
+              
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-cyan-400/10 rounded-full flex items-center justify-center text-2xl">
+                    1
+                  </div>
+                  <h4 className="text-cyan-400 font-semibold mb-2">Discover</h4>
+                  <p className="text-gray-300 text-sm">Understanding your vision and requirements</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-purple-500/10 rounded-full flex items-center justify-center text-2xl">
+                    2
+                  </div>
+                  <h4 className="text-purple-400 font-semibold mb-2">Design</h4>
+                  <p className="text-gray-300 text-sm">Crafting innovative solutions and prototypes</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-cyan-400/10 rounded-full flex items-center justify-center text-2xl">
+                    3
+                  </div>
+                  <h4 className="text-cyan-400 font-semibold mb-2">Develop</h4>
+                  <p className="text-gray-300 text-sm">Building with cutting-edge technologies</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-purple-500/10 rounded-full flex items-center justify-center text-2xl">
+                    4
+                  </div>
+                  <h4 className="text-purple-400 font-semibold mb-2">Deliver</h4>
+                  <p className="text-gray-300 text-sm">Launching and supporting your solution</p>
+                </div>
+              </div>
+              
+              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
+                <h4 className="text-xl font-semibold text-white mb-4">Why Choose Our Approach?</h4>
+                <p className="text-gray-300">
+                  We combine technical expertise with creative thinking to deliver solutions that not only 
+                  meet your business objectives but also provide exceptional user experiences and drive 
+                  measurable results. Our iterative process ensures we're always aligned with your vision.
+                </p>
               </div>
             </div>
           </div>

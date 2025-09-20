@@ -1,81 +1,100 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import empireFitnes from '../assets/empireFitness.jpg'
-import greatWaters from '../assets/greatWaters.jpg'
-import neoTokyo from '../assets/neoTokyo.jpg'
-import oyaBaby from '../assets/oyaBaby.jpg'
-import strengthBase from '../assets/strengthBase.jpg'
-import techFord from '../assets/techFord.jpg'
-import techSport from '../assets/techSport.jpg'
-import wheelAlgment from '../assets/wheelAlgment.jpg'
+
+import empireFitnes from '../assets/empireFitnessNew.png'
+import greatWaters from '../assets/greatWaters-removebg-preview.png'
+import neoTokyo from '../assets/neoTokyo-removebg-preview.png'
+import oyaBaby from '../assets/oyaBaby-removebg-preview.png'
+import strengthBase from '../assets/strengthBase-removebg-preview.png'
+import techFord from '../assets/techFord-removebg-preview.png'
+import techSport from '../assets/techSport-removebg-preview.png'
+import wheelAlgment from '../assets/wheelAlgment-removebg-preview.png'
 
 const Clients = () => {
-  // Array for client logos - replace with your actual client logo URLs
+  const [selectedClient, setSelectedClient] = useState(null);
+
+  // Array for client logos with your actual images
   const clients = [
     {
       id: 1,
-      name: "Client 1",
+      name: "Empire Fitness",
       logo: empireFitnes,
-      website: "#"
+      website: "#",
+      description: "Fitness center management system"
     },
     {
       id: 2,
-      name: "Client 2",
+      name: "Great Waters",
       logo: greatWaters,
-      website: "#"
+      website: "#",
+      description: "Water purification company website"
     },
     {
       id: 3,
-      name: "Client 3",
+      name: "Neo Tokyo",
       logo: neoTokyo,
-      website: "#"
+      website: "#",
+      description: "Japanese restaurant online platform"
     },
     {
       id: 4,
-      name: "Client 4",
+      name: "Oya Baby",
       logo: oyaBaby,
-      website: "#"
+      website: "#",
+      description: "Baby products e-commerce store"
     },
     {
       id: 5,
-      name: "Client 5",
+      name: "Strength Base",
       logo: strengthBase,
-      website: "#"
+      website: "#",
+      description: "Gym equipment supplier portal"
     },
     {
       id: 6,
-      name: "Client 6",
+      name: "Tech Ford",
       logo: techFord,
-      website: "#"
+      website: "#",
+      description: "Automotive technology solutions"
     },
     {
       id: 7,
-      name: "Client 7",
+      name: "Tech Sport",
       logo: techSport,
-      website: "#"
+      website: "https://www.techford.in/",
+      description: "Sports technology innovation"
     },
     {
       id: 8,
-      name: "Client 8",
+      name: "Wheel Alignment",
       logo: wheelAlgment,
-      website: "#"
+      website: "#",
+      description: "Automotive service management system"
     }
   ];
+
+  const openModal = (client) => {
+    setSelectedClient(client);
+  };
+
+  const closeModal = () => {
+    setSelectedClient(null);
+  };
 
   return (
     <section id="clients" className="w-full py-20 bg-gradient-to-b from-gray-800 to-gray-900 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(4)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full bg-cyan-500/5 animate-pulse"
             style={{
-              width: Math.random() * 150 + 50,
-              height: Math.random() * 150 + 50,
+              width: Math.random() * 200 + 50,
+              height: Math.random() * 200 + 50,
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
-              animationDelay: `${i * 3}s`,
+              animationDelay: `${i * 2}s`,
               animationDuration: `${Math.random() * 10 + 10}s`
             }}
           />
@@ -83,49 +102,112 @@ const Clients = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center animate-fade-in opacity-0" 
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center animate-fade-in opacity-0" 
             style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
           <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-            Our Clients
+            Our Valued Clients
           </span>
         </h2>
         
         <p className="text-xl text-gray-300 text-center mb-16 max-w-3xl mx-auto animate-fade-in opacity-0"
            style={{animationDelay: '0.4s', animationFillMode: 'forwards'}}>
-          We've had the privilege of working with some amazing companies and brands
+          We've had the privilege of partnering with innovative companies across various industries
         </p>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        {/* Client Logos Grid - Larger Display */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
           {clients.map((client, index) => (
-            <div 
+            <motion.div 
               key={client.id}
-              className="flex items-center justify-center p-4 bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-cyan-400/30 transition-all duration-500 hover:scale-105 animate-fade-in opacity-0"
+              className="group relative bg-gray-800/40 backdrop-blur-sm p-6 rounded-2xl border border-gray-700 hover:border-cyan-400/30 transition-all duration-500 hover:scale-105 animate-fade-in opacity-0 cursor-pointer"
               style={{animationDelay: `${0.6 + index * 0.1}s`, animationFillMode: 'forwards'}}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => openModal(client)}
             >
-              <a 
-                href={client.website} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-full h-20"
-              >
-                <img 
-                  src={client.logo} 
-                  alt={client.name}
-                  className="max-h-12 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </a>
-            </div>
+              <div className="flex flex-col items-center">
+                {/* Client Logo - Larger Size */}
+                <div className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mb-4 flex items-center justify-center p-4 bg-white/5 rounded-xl">
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                  />
+                </div>
+                
+                {/* Client Name */}
+                <h3 className="text-lg font-semibold text-white text-center mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                  {client.name}
+                </h3>
+                
+                {/* View Details Button */}
+                <button className="text-cyan-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  View Details →
+                </button>
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-20 animate-fade-in opacity-0"
-             style={{animationDelay: '1.4s', animationFillMode: 'forwards'}}>
-          <h3 className="text-2xl font-semibold text-white mb-6">Want to join our client list?</h3>
-          <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full font-medium shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:scale-105">
-            Start a Project
-          </button>
-        </div>
+        {/* Client Modal */}
+        {selectedClient && (
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-fade-in">
+            <div className="bg-gray-800/90 backdrop-blur-lg rounded-2xl border border-cyan-400/20 p-8 max-w-2xl w-full mx-4">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold text-white">{selectedClient.name}</h3>
+                <button 
+                  onClick={closeModal}
+                  className="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"
+                >
+                  ×
+                </button>
+              </div>
+              
+              <div className="flex flex-col md:flex-row gap-8 items-center">
+                <div className="w-full md:w-1/2">
+                  <div className="w-64 h-64 mx-auto bg-white/5 rounded-xl p-6 flex items-center justify-center">
+                    <img 
+                      src={selectedClient.logo} 
+                      alt={selectedClient.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
+                
+                <div className="w-full md:w-1/2">
+                  <p className="text-gray-300 mb-4">{selectedClient.description}</p>
+                  <div className="space-y-2">
+                    <p className="text-cyan-400 font-medium">Services Provided:</p>
+                    <ul className="text-gray-300 list-disc list-inside space-y-1">
+                      <li>Custom Web Application</li>
+                      <li>Mobile App Development</li>
+                      <li>Ongoing Maintenance & Support</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="mt-6 flex gap-4">
+                    <a 
+                      href={selectedClient.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors duration-300"
+                    >
+                      Visit Website
+                    </a>
+                    <button 
+                      onClick={closeModal}
+                      className="px-4 py-2 border border-gray-600 text-gray-300 rounded-lg hover:border-cyan-400 hover:text-cyan-400 transition-colors duration-300"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+       
       </div>
 
       {/* Add custom animation styles */}
@@ -135,7 +217,7 @@ const Clients = () => {
           to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in {
-          animation: fadeIn 1s ease-out;
+          animation: fadeIn 0.5s ease-out;
         }
       `}</style>
     </section>

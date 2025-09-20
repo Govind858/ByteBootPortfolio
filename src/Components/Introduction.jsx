@@ -88,7 +88,7 @@ const Introduction = () => {
             </div>
           </div>
           
-          <div className="flex justify-center animate-fade-in opacity-0" 
+          {/* <div className="flex justify-center animate-fade-in opacity-0" 
                style={{animationDelay: '1.6s', animationFillMode: 'forwards'}}>
             <button 
               className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full font-medium text-lg shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:scale-105 mr-4"
@@ -100,7 +100,7 @@ const Introduction = () => {
             >
               Meet Our Team
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 
