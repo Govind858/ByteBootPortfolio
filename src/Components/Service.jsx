@@ -49,81 +49,86 @@ const Services = () => {
 
       <div className="w-full px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16 text-center animate-fade-in opacity-0" 
+          {/* Rajdhani font for main heading */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-12 md:mb-16 text-center animate-fade-in opacity-0 font-rajdhani" 
               style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
             <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Our Services
             </span>
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 mb-12 md:mb-16">
             {services.map((service, index) => (
               <div 
                 key={service.id}
-                className="bg-gray-800/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-cyan-400/30 transition-all duration-500 hover:scale-105 animate-fade-in opacity-0"
+                className="bg-gray-800/40 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700 hover:border-cyan-400/30 transition-all duration-500 hover:scale-105 animate-fade-in opacity-0 font-poppins"
                 style={{animationDelay: `${0.4 + index * 0.2}s`, animationFillMode: 'forwards'}}
               >
-                <div className={`text-5xl mb-6 bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
+                <div className={`text-4xl md:text-5xl mb-4 md:mb-6 bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-white mb-4">
+                {/* Rajdhani font for service titles */}
+                <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4 font-rajdhani">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 text-lg leading-relaxed">
+                {/* Poppins font for descriptions */}
+                <p className="text-gray-400 text-base md:text-lg leading-relaxed font-poppins">
                   {service.description}
                 </p>
-                <button className="mt-6 px-5 py-2 bg-gradient-to-r from-gray-700 to-gray-800 text-cyan-400 rounded-full font-medium border border-cyan-400/20 hover:border-cyan-400/40 hover:bg-gradient-to-r hover:from-cyan-400/10 hover:to-cyan-400/5 transition-all duration-300">
+                <button className="mt-4 md:mt-6 px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-800 text-cyan-400 rounded-full font-medium border border-cyan-400/20 hover:border-cyan-400/40 hover:bg-gradient-to-r hover:from-cyan-400/10 hover:to-cyan-400/5 transition-all duration-300 text-sm md:text-base font-poppins">
                   Learn More
                 </button>
               </div>
             ))}
           </div>
 
-          {/* Creative Process Visualization */}
-          <div className="bg-gradient-to-r from-cyan-400/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-cyan-400/20 animate-fade-in opacity-0"
+          {/* Creative Process Visualization - Poppins font */}
+          <div className="bg-gradient-to-r from-cyan-400/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 lg:p-12 border border-cyan-400/20 animate-fade-in opacity-0 font-poppins"
                style={{animationDelay: '1.0s', animationFillMode: 'forwards'}}>
             <div className="text-center max-w-4xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
+              {/* Rajdhani font for section title */}
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8 font-rajdhani">
                 Our Creative Process
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-cyan-400/10 rounded-full flex items-center justify-center text-2xl">
+                  <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 bg-cyan-400/10 rounded-full flex items-center justify-center text-xl md:text-2xl">
                     1
                   </div>
-                  <h4 className="text-cyan-400 font-semibold mb-2">Discover</h4>
-                  <p className="text-gray-300 text-sm">Understanding your vision and requirements</p>
+                  <h4 className="text-cyan-400 font-semibold mb-1 md:mb-2 text-sm md:text-base">Discover</h4>
+                  <p className="text-gray-300 text-xs md:text-sm">Understanding your vision and requirements</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-purple-500/10 rounded-full flex items-center justify-center text-2xl">
+                  <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 bg-purple-500/10 rounded-full flex items-center justify-center text-xl md:text-2xl">
                     2
                   </div>
-                  <h4 className="text-purple-400 font-semibold mb-2">Design</h4>
-                  <p className="text-gray-300 text-sm">Crafting innovative solutions and prototypes</p>
+                  <h4 className="text-purple-400 font-semibold mb-1 md:mb-2 text-sm md:text-base">Design</h4>
+                  <p className="text-gray-300 text-xs md:text-sm">Crafting innovative solutions and prototypes</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-cyan-400/10 rounded-full flex items-center justify-center text-2xl">
+                  <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 bg-cyan-400/10 rounded-full flex items-center justify-center text-xl md:text-2xl">
                     3
                   </div>
-                  <h4 className="text-cyan-400 font-semibold mb-2">Develop</h4>
-                  <p className="text-gray-300 text-sm">Building with cutting-edge technologies</p>
+                  <h4 className="text-cyan-400 font-semibold mb-1 md:mb-2 text-sm md:text-base">Develop</h4>
+                  <p className="text-gray-300 text-xs md:text-sm">Building with cutting-edge technologies</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-purple-500/10 rounded-full flex items-center justify-center text-2xl">
+                  <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 bg-purple-500/10 rounded-full flex items-center justify-center text-xl md:text-2xl">
                     4
                   </div>
-                  <h4 className="text-purple-400 font-semibold mb-2">Deliver</h4>
-                  <p className="text-gray-300 text-sm">Launching and supporting your solution</p>
+                  <h4 className="text-purple-400 font-semibold mb-1 md:mb-2 text-sm md:text-base">Deliver</h4>
+                  <p className="text-gray-300 text-xs md:text-sm">Launching and supporting your solution</p>
                 </div>
               </div>
               
-              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
-                <h4 className="text-xl font-semibold text-white mb-4">Why Choose Our Approach?</h4>
-                <p className="text-gray-300">
+              <div className="bg-gray-800/50 p-4 md:p-6 rounded-xl border border-gray-700">
+                {/* Rajdhani font for "Why Choose Our Approach?" */}
+                <h4 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 font-rajdhani">Why Choose Our Approach?</h4>
+                <p className="text-gray-300 text-sm md:text-base">
                   We combine technical expertise with creative thinking to deliver solutions that not only 
                   meet your business objectives but also provide exceptional user experiences and drive 
                   measurable results. Our iterative process ensures we're always aligned with your vision.

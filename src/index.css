@@ -3,6 +3,28 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Font Classes */
+.rajdhani-bold {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+}
+
+.poppins-light {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.poppins-regular {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.poppins-medium {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

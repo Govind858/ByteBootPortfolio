@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const Products = () => {
@@ -70,7 +70,8 @@ const Products = () => {
 
       <div className="w-full px-4 md:px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16 text-center animate-fade-in opacity-0" 
+          {/* Main Heading */}
+          <h2 className="rajdhani-bold text-4xl md:text-5xl lg:text-6xl mb-16 text-center animate-fade-in opacity-0" 
               style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
             <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Our Products
@@ -87,52 +88,35 @@ const Products = () => {
                 <div className={`text-5xl mb-6 bg-gradient-to-r ${product.gradient} bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300`}>
                   {product.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-white mb-4">
+
+                {/* Product Title with Rajdhani */}
+                <h3 className="rajdhani-bold text-2xl text-white mb-4">
                   {product.title}
                 </h3>
-                <p className="text-gray-400 text-lg leading-relaxed mb-6">
+
+                {/* Description with Poppins */}
+                <p className="poppins-light text-gray-400 text-lg leading-relaxed mb-6">
                   {product.description}
                 </p>
                 
                 <div className="mb-6">
-                  <h4 className="text-cyan-400 font-medium mb-3">Key Features:</h4>
+                  <h4 className="poppins-medium text-cyan-400 mb-3">Key Features:</h4>
                   <ul className="space-y-2">
                     {product.features.map((feature, i) => (
                       <li key={i} className="flex items-start">
                         <span className="text-purple-400 mr-2">•</span>
-                        <span className="text-gray-300">{feature}</span>
+                        <span className="poppins-regular text-gray-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 
-                <button className="w-full px-5 py-3 bg-gradient-to-r from-gray-700 to-gray-800 text-cyan-400 rounded-full font-medium border border-cyan-400/20 hover:border-cyan-400/40 hover:bg-gradient-to-r hover:from-cyan-400/10 hover:to-cyan-400/5 transition-all duration-300">
+                {/* <button className="w-full px-5 py-3 bg-gradient-to-r from-gray-700 to-gray-800 text-cyan-400 rounded-full poppins-medium border border-cyan-400/20 hover:border-cyan-400/40 hover:bg-gradient-to-r hover:from-cyan-400/10 hover:to-cyan-400/5 transition-all duration-300">
                   View Details
-                </button>
+                </button> */}
               </div>
             ))}
           </div>
-
-          {/* Additional CTA section */}
-          {/* <div className="bg-gradient-to-r from-cyan-400/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-cyan-400/20 animate-fade-in opacity-0"
-               style={{animationDelay: '1.2s', animationFillMode: 'forwards'}}>
-            <div className="text-center max-w-4xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                Ready to Transform Your Business with Our Products?
-              </h3>
-              <p className="text-gray-300 text-lg mb-8">
-                Each of our solutions is designed to streamline operations, enhance customer experience, and drive growth. Let us help you find the perfect fit for your business needs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full font-medium shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:scale-105">
-                  Request a Demo
-                </button>
-                <button className="px-8 py-3 border border-cyan-400/30 text-cyan-400 rounded-full font-medium hover:bg-cyan-400/10 transition-colors duration-300 transform hover:scale-105">
-                  View All Products
-                </button>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
 

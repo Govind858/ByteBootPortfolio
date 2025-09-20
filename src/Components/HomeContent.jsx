@@ -42,18 +42,18 @@ function HomeContent() {
       
       <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
         <motion.h1 
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 font-rajdhani"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent bg-300% animate-gradient">
-            ByteBoot
+            BYTEBOOT
           </span>
         </motion.h1>
         
         <motion.p 
-          className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto"
+          className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto font-poppins"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -69,7 +69,7 @@ function HomeContent() {
         >
           {/* Our Products Button - Scrolls to Products section */}
           <motion.button 
-            className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full font-medium shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
+            className="px-6 py-3 sm:px-8 sm:py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full font-medium font-poppins text-sm sm:text-base shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
             whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(6, 182, 212, 0.4), 0 8px 10px -6px rgba(147, 51, 234, 0.4)" }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('products')}
@@ -79,7 +79,7 @@ function HomeContent() {
           
           {/* Learn More Button - Scrolls to Introduction section */}
           <motion.button 
-            className="px-8 py-3 border border-cyan-400/30 text-cyan-400 rounded-full font-medium hover:bg-cyan-400/10 transition-colors duration-300"
+            className="px-6 py-3 sm:px-8 sm:py-3 border border-cyan-400/30 text-cyan-400 rounded-full font-medium font-poppins text-sm sm:text-base hover:bg-cyan-400/10 transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('about')}
@@ -115,6 +115,19 @@ function HomeContent() {
         .animate-gradient {
           background-size: 200% auto;
           animation: gradient 3s linear infinite;
+        }
+        
+        /* Import fonts from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        .font-rajdhani {
+          font-family: 'Rajdhani', sans-serif;
+          font-weight: 700;
+        }
+        
+        .font-poppins {
+          font-family: 'Poppins', sans-serif;
+          font-weight: 300;
         }
       `}</style>
     </section>
